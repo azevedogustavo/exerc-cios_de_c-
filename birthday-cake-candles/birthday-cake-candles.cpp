@@ -14,7 +14,22 @@ vector<string> split(const string &);
  */
 
 int birthdayCakeCandles(vector<int> candles) {
-
+int val_max{};
+int val_max_repeat{};
+//int size_array=sizeof(candles) / sizeof(candles[0]);
+int size_array=candles.size();
+    std::cout << size_array << "  valor do vetor";
+    for(int i=0; i < size_array; i++){
+         //std::cout<< candles[i] << " ";
+         if (val_max < candles[i])
+         val_max=candles[i];
+         }
+         
+    for(int i=0; i < size_array; i++){
+         if(val_max==candles[i])
+         val_max_repeat++;
+     }
+     return val_max_repeat;
 }
 
 int main()
@@ -42,7 +57,7 @@ int main()
     int result = birthdayCakeCandles(candles);
 
     fout << result << "\n";
-
+    std::cout << result << "\n";
     fout.close();
 
     return 0;
